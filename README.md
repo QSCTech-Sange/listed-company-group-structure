@@ -4,13 +4,24 @@
 
 ## 安装包
 
-使用 Python 来实现数据预处理，因此首先需要安装 pandas
+使用 Python 来实现数据预处理。
 
 ```shell
+pip install numpy
 pip install pandas
+```
+
+使用 R  来进行 C-Lasso 分组回归
+
+```
+install.packages('devtools')
+library(devtools)
+devtools::install_github("zhan-gao/classo", INSTALL_opts=c("--no-multiarch"))
 ```
 
 ## 流程
 
 1. 数据预处理
-2. 
+2. 数据合并
+3. 多元线性回归
+4. 加入 C-Lasso 的分组回归
