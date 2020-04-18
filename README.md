@@ -1,2 +1,16 @@
-# listed-company-group-structure
-group compaines based on c-lasso
+# 高盈利上市公司会带来高股价回报吗？基于机器学习的样本结构分解
+
+毕业论文代码实现，便于分析和复现。
+
+## 安装包
+
+使用 Python 来实现数据预处理，因此首先需要安装 pandas
+
+```shell
+pip install pandas
+```
+
+## 流程
+
+1. 数据预处理
+2. 
