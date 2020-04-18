@@ -27,6 +27,7 @@ RF = pd.read_table('TRD_Nrrate.csv',encoding='utf-16')
 RF['Clsdt'] = RF['Clsdt'].apply(lambda x:x[:7])
 RF.drop_duplicates(subset='Clsdt',keep='first',inplace=True)
 RF.columns=['Time','RF']
+RF['RF'] = RF['RF'] / 100 
 RF.to_csv("RF.csv",index=False)
 
 # 账面市值比，以年为单位
@@ -39,16 +40,20 @@ BM.to_csv('BM.csv',index=False)
 
 # ROE，一年四次
 ROE = pd.read_table('FI_T5.csv',encoding='utf-16')
-ROE.columns=['Stkcd','Time','ROE']
-ROE['Time'] = ROE['Time'].apply(lambda x:x[:7])
+ROE = ROE[ROE['Typrep'] == 'A']
+ROE.drop('Typrep',axis=1,inplace=True)
+ROE.columns=['Stkcd','Season','ROE']
+ROE['Season'] = ROE['Season'].apply(lambda x:x[:7])
 ROE_count = ROE.loc[:,'Stkcd'].value_counts()
-ROE = ROE[ROE['Stkcd'].isin(ROE_count[ROE_count > 70].index) == True]
+ROE = ROE[ROE['Stkcd'].isin(ROE_count[ROE_count > 35].index) == True]
 ROE.to_csv('ROE.csv',index=False)
 
 # 总资产增长率，一年四次
 Asset = pd.read_table('FI_T8.csv',encoding='utf-16')
-Asset.columns=['Stkcd','Time','Inv']
-Asset['Time'] = Asset['Time'].apply(lambda x:x[:7])
+Asset = Asset[Asset['Typrep'] == 'A']
+Asset.drop('Typrep',axis=1,inplace=True)
+Asset.columns=['Stkcd','Season','Inv']
+Asset['Season'] = Asset['Season'].apply(lambda x:x[:7])
 Asset_count = Asset.loc[:,'Stkcd'].value_counts()
-Asset = Asset[Asset['Stkcd'].isin(Asset_count[Asset_count > 70].index) == True]
+Asset = Asset[Asset['Stkcd'].isin(Asset_count[Asset_count > 35].index) == True]
 Asset.to_csv('Inv.csv',index=False)
