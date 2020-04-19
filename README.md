@@ -9,6 +9,8 @@
 ```shell
 pip install numpy
 pip install pandas
+pip install statsmodels
+pip install linearmodels
 ```
 
 使用 R  来进行 C-Lasso 分组回归

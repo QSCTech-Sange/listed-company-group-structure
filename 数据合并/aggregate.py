@@ -49,5 +49,10 @@ allInfo['RM'] = allInfo['RM'] - allInfo['RF']
 # 删除无用变量
 allInfo.drop(['Year','Season','RF'],axis=1, inplace=True)
 
+# 筛选空数据过多的变量
+allInfo.dropna(axis = 0,inplace=True)
+value_count = allInfo['Stkcd'].value_counts()
+allInfo = allInfo[allInfo['Stkcd'].isin(value_count[value_count == 120].index) == True]
+
 # 保存
 allInfo.to_csv("data.csv",index=False)
