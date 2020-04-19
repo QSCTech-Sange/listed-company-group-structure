@@ -27,3 +27,5 @@ devtools::install_github("zhan-gao/classo", INSTALL_opts=c("--no-multiarch"))
 2. 数据合并
 3. 多元线性回归
 4. 加入 C-Lasso 的分组回归
+
+进入上面的文件夹并严格遵循其中的 README.md，即可复现得到结果。
