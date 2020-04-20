@@ -1,0 +1,36 @@
+                          PanelOLS Estimation Summary                           
+================================================================================
+Dep. Variable:                    Ret   R-squared:                        0.3195
+Estimator:                   PanelOLS   R-squared (Between):             -6.1362
+No. Observations:               24000   R-squared (Within):               0.3195
+Date:                Mon, Apr 20 2020   R-squared (Overall):              0.2987
+Time:                        20:38:14   Log-likelihood                  2.14e+04
+Cov. Estimator:             Clustered                                           
+                                        F-statistic:                      2234.9
+Entities:                         200   P-value                           0.0000
+Avg Obs:                       120.00   Distribution:                 F(5,23795)
+Min Obs:                       120.00                                           
+Max Obs:                       120.00   F-statistic (robust):             1249.9
+                                        P-value                           0.0000
+Time periods:                     120   Distribution:                 F(5,23795)
+Avg Obs:                       200.00                                           
+Min Obs:                       200.00                                           
+Max Obs:                       200.00                                           
+                                                                                
+                             Parameter Estimates                              
+==============================================================================
+            Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+------------------------------------------------------------------------------
+const         -0.0258     0.0124    -2.0874     0.0369     -0.0501     -0.0016
+MV             0.1532     0.0203     7.5306     0.0000      0.1133      0.1930
+BM            -0.0738     0.0055    -13.309     0.0000     -0.0847     -0.0630
+RM             1.0405     0.0137     76.144     0.0000      1.0137      1.0673
+ROE           -0.0125     0.0101    -1.2391     0.2153     -0.0323      0.0073
+Inv            0.0173     0.0121     1.4323     0.1521     -0.0064      0.0411
+==============================================================================
+
+F-test for Poolability: 1.3637
+P-value: 0.0005
+Distribution: F(199,23795)
+
+Included effects: Entity
